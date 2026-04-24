@@ -1,6 +1,25 @@
+//    MapTexPack3
+//    A console app that primarily automates the process of packing dds
+//    textures into a Dark Souls 3 TPFBDT.
+//
+//    Copyright (C) 2026  GompDS
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License,
+//    any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 using System.Text.RegularExpressions;
 
-namespace YarrToMap;
+namespace MapTexPack3;
 
 public static class Options
 { 
@@ -14,8 +33,6 @@ public static class Options
     public static string YarrTextureDirectory { get; private set; }
     public static bool PatchRegular { get; private set; }
     public static bool IncludeRegularTextures { get; private set; }
-    //public bool PatchLightmaps { get; }
-    //public bool IncludeLightmaps { get; }
     public static bool CreateBackups { get; private set; }
 
     public static bool ProcessOptions()
@@ -75,18 +92,6 @@ public static class Options
                 $"Used vanilla textures will be included in m{MapId}_000Xs.",
                 $"Used vanilla textures will not be included in m{MapId}_000Xs.");
         }
-            
-        /*PatchLightmaps = YesNoQuestion(
-            $"Do you want to use the .patch extension for lightmaps?",
-            $"The .patch extension will be used for gi_env_m{MapId}.",
-            $"The .patch extension will not be used for gi_env_m{MapId}.");
-        if (!PatchLightmaps)
-        {
-            IncludeLightmaps = YesNoQuestion(
-                $"Do you want used lightmaps to be included from the game files?",
-                $"Used vanilla textures will be included in gi_env_m{MapId}.",
-                $"Used vanilla textures will not be included in gi_env_m{MapId}.");
-        }*/
 
         CreateBackups = YesNoQuestion(
             "Should backups be created?",

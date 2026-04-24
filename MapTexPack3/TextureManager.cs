@@ -1,9 +1,28 @@
+//    MapTexPack3
+//    A console app that primarily automates the process of packing dds
+//    textures into a Dark Souls 3 TPFBDT.
+//
+//    Copyright (C) 2026  GompDS
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License,
+//    any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 using System.Globalization;
 using System.Text.RegularExpressions;
+using MapTexPack3.Util;
 using SoulsFormats;
-using YarrToMap.Util;
 
-namespace YarrToMap;
+namespace MapTexPack3;
 
 public class TextureManager
 {
@@ -188,7 +207,7 @@ public class TextureManager
     {
         string fileName = Path.GetFileNameWithoutExtension(filePath);
         TPF newTpf = new TPF();
-        TPF.Texture newTexture = new TPF.Texture(fileName, 0, 0, File.ReadAllBytes(filePath));
+        TPF.Texture newTexture = new TPF.Texture(fileName, 0, 0, File.ReadAllBytes(filePath), TPF.TPFPlatform.PC);
         if (fileName.EndsWith("_n") || fileName.EndsWith("_n_l"))
         {
             newTexture.Format = 0x6A;
@@ -202,7 +221,7 @@ public class TextureManager
         newTpf.Textures.Add(newTexture);
 
         BinderFile newFile = new BinderFile(Binder.FileFlags.Flag1, $"{fileName}.tpf.dcx",
-            DCX.Compress(newTpf.Write(), DCX.Type.DCX_DFLT_10000_44_9));
+            DCX.Compress(newTpf.Write(), new DCX.DcxDfltCompressionInfo(DCX.DfltCompressionPreset.DCX_DFLT_10000_44_9)));
         return newFile;
     }
 }
