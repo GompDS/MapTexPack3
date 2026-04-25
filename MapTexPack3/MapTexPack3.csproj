@@ -11,4 +11,11 @@
       <ProjectReference Include="..\SoulsFormatsNEXT\SoulsFormats.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="config.ini" />
+      <AdditionalFiles Include="config.ini">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </AdditionalFiles>
+    </ItemGroup>
+
 </Project>
