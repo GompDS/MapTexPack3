@@ -59,12 +59,12 @@ static class Program
         Console.WriteLine($": Found {texTransferCount} textures, totaling {usedTexByteCount / 1000} KB.");
         Console.WriteLine($": Excluded approximately {unusedTexByteCount / 1000} KB of unused textures.\n");
 
-        Console.WriteLine(": Copying used textures from YARR into pool...");
+        Console.WriteLine(": Copying used local dds textures into pool...");
         
         IEnumerable<string> files = Directory.EnumerateFiles(Options.YarrTextureDirectory, "*.dds");
         int transferCount = textureManager.TransferYarrTextures(files);
 
-        Console.WriteLine($": Copied {transferCount} textures from YARR to this map.\n");
+        Console.WriteLine($": Copied {transferCount} local dds textures to this map.\n");
 
         if (Options.IncludeRegularTextures)
         {
