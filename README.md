@@ -1,6 +1,6 @@
 # MapTexPack3
-A console app that primarily automates the process of packing dds textures into a Dark Souls 3 TPFBDT.
-It also prunes (permanently deletes) any unused textures from these texture binders.
+A console app that primarily automates the process of packing dds textures into a Dark Souls 3 TPFBDT/BHD.
+It also prunes any unused textures from these binders and keeps them all about the same size.
 # Requirements
 - Install .NET Runtime 9.0.X
 - Unpack your Dark Souls 3 game using UXM
@@ -17,10 +17,11 @@ It also prunes (permanently deletes) any unused textures from these texture bind
     included from the vanilla binders. This is will grab all the used textures from the vanilla
     binders and add them to the mod binders. This is useful if your map uses very few vanilla textures
     because then you aren't wasting memory loading excess textures.
-  - It's also recommended that you enable backups incase there are any unforseen issues with this program.
+  - It's also recommended that you enable backups incase there are any unforseen issues with this program,
+    because **pruned textures are deleted permanently**.
     Use of a version control system like git for your mod files will also reduce the risk of losing stuff.
+# Libraries Used
+- **SoulsFormatsNEXT**: All contributors to SoulsFormatsNEXT at soulsmods. https://github.com/soulsmods/SoulsFormatsNEXT/
 # License
 Both MapTexPack3 and SoulsFormatsNEXT are licensed under GPL v3. In other words, all files in this solution
 are licensed under GPL v3. A copy of the license is provided with the program.
-# Links
-The SoulsFormatsNEXT repository can be found here: https://github.com/soulsmods/SoulsFormatsNEXT/
