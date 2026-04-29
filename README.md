@@ -1,6 +1,8 @@
 # MapTexPack3
 A console app that primarily automates the process of packing dds textures into a Dark Souls 3 TPFBDT/BHD.
 It also prunes any unused textures from these binders and keeps them all about the same size.
+# Supported Platforms
+- Windows
 # Requirements
 - Install .NET Runtime 9.0.X
 - Unpack your Dark Souls 3 game using UXM
