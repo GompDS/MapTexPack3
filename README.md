@@ -27,3 +27,8 @@ It also prunes any unused textures from these binders and keeps them all about t
 # License
 Both MapTexPack3 and SoulsFormatsNEXT are licensed under GPL v3. In other words, all files in this solution
 are licensed under GPL v3. A copy of the license is provided with the program.
+# Changelog
+### 1.0.1
+- Fix- change TryGetMsb call to use correct map dir when getting game msb (oops)
+### 1.0.0
+- Initial release
