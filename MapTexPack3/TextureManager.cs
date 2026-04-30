@@ -21,7 +21,7 @@ public class TextureManager
         GetModObjects();
         GetUsedObjectTextures(Options.ModObjectDirectory);
 
-        if (Program.TryGetMsb(Options.ModMapDirectory, out MSB3? gameMsb))
+        if (Program.TryGetMsb(Options.GameMapDirectory, out MSB3? gameMsb))
         {
             if (_usedMapPieces.Count == 0)
             {
